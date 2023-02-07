@@ -1,0 +1,72 @@
+Shell01
+
+ex01 - print_groups.sh
+
+groups $FT_user | tr ' ' ',' | tr -d '\n'
+
+tr ' ' ',' -> transformar " " em ","
+tr -d '\n' -> delete em todas as new lines
+
+ex02 - find_sh.sh 
+
+find . -type f -name "*.sh" -execdir basename {} .sh ";"
+
+. -> direcao atual
+-type f -> encontrar files normais
+-n "*.sh" -> encontrar files acabados em ".sh"
+-execdir basename {} 
+
+ex03 - count_files.sh
+
+find . -type f | wc -l
+
+wc -l -> print quantidade de new line 
+
+ex04 - MAC.sh
+
+ifconfig | grep ether | cut -d " " -f10
+
+grep ether ->
+cut -d " " -f10 -> selecionar o que esta entre " " que contem 10 espacos
+
+ex05 - "\?$*’MaRViN’*$?\"
+
+touch \"\\\?\$\*\’\MaRViN\’\*\$\?\\\"
+
+colocar \ antes de cada caracter especial para o terminal reconhecer
+
+ex06 - skip.sh
+
+ls -l | awk '(NR%2==0)'
+
+awk '(NR%2==0)' -> e verificado se a linha divida por 2 da resto 0
+
+ex07 - r_dwssap
+
+cat /etc/passwd | sed -e 's/:.*//g' | tr '\n' ',' | rev | tr "," "\n" | sort -r | tr "\n" "," | sed -e 's/, */, /g' -e 's/.$//' -e 's/.\{3\}$//'
+
+sed -e 's/:.*//g' -> transformar : em nada (g representa "global" ou seja, e uma transformacao no output todo)
+rev -> reverse no output
+sort -r -> ordenar inversamente
+sed -e 's/, */, /g' -> tranformar todas as virgulas com espacos antes de caracteres em virgulas com espacos
+-e 's/.$//' -> transformar os pontos em nada
+-e 's/.\{3\}$//' -> ?
+
+ex08 - 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
